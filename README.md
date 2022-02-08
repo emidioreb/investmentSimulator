@@ -6,7 +6,7 @@ Aplicação desenvolvida para usuários que tem como intuito realizar uma simula
 * Requisitos do projeto.
 
 ## Protótipo do projeto.
-link figma
+https://www.figma.com/file/z5XXvkLLmLDo7QfdBqr0Qr/Untitled?node-id=0%3A1
 
 ## Tecnologias utilizadas.
 - Figma para o desenvolvimento da interface.
