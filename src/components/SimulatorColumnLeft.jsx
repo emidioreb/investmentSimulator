@@ -44,7 +44,7 @@ function SimulatorColumnLeft() {
         </label>
         <br />
         <label htmlFor="IPCA" className="IPCA">
-          Aporte Inicial
+          IPCA
           <br />
           <input
             type="number"
