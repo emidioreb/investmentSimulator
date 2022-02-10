@@ -34,5 +34,6 @@ https://www.figma.com/file/z5XXvkLLmLDo7QfdBqr0Qr/Untitled?node-id=0%3A1
 - [ ] Campo "Valor Final Líquido".
 - [ ] Campo "Valor Total Investido".
 - [ ] Campo "Ganho Líquido".
+- [x] Adição de hooks personalizados para melhor manipulação do estado da aplicação.
 
   
