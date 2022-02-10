@@ -14,6 +14,7 @@ https://www.figma.com/file/z5XXvkLLmLDo7QfdBqr0Qr/Untitled?node-id=0%3A1
 
 ## Requisitos do projeto.
 ### Desenvolvimento das telas de Simulador de Investimento.
+- [x] Consiguração do eslint.
 - [x] Desenvolvimento da aplicação no figma.
 - [ ] Título - "Simulador de Investimentos"
 - [ ] Subtítulo - "Simulador"
