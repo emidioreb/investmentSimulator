@@ -60,6 +60,12 @@ function SimulatorColumnRight() {
           />
         </label>
       </div>
+      <button
+        type="button"
+        className="button-simulate"
+      >
+        Simular
+      </button>
     </div>
   );
 }

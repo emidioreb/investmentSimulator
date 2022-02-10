@@ -54,6 +54,12 @@ function SimulatorColumnLeft() {
           />
         </label>
       </div>
+      <button
+        type="button"
+        className="clear"
+      >
+        Limpar campos
+      </button>
     </div>
   );
 }
