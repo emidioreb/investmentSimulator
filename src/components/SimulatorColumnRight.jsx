@@ -1,26 +1,34 @@
 import React from 'react';
+import UseInfoRight from '../hooks/UseInfoRight';
 
 function SimulatorColumnRight() {
+  const { setIndexing } = UseInfoRight();
+  const { setMonthContribution } = UseInfoRight();
+  const { setProfitability } = UseInfoRight();
+  const { setCDI } = UseInfoRight();
   return (
     <div>
-      <div className="Indexing-Types">
+      <div className="indexing-Types">
         <h4>Tipos de Indexação</h4>
         <div className="buttons-Indexing-Types">
           <button
             type="button"
             className="button-before"
+            onClick={() => setIndexing('before')}
           >
             PRÉ
           </button>
           <button
             type="button"
             className="button-after"
+            onClick={() => setIndexing('after')}
           >
             PÓS
           </button>
           <button
             type="button"
             className="button-fix"
+            onClick={() => setIndexing('fix')}
           >
             FIXADO
           </button>
@@ -33,7 +41,7 @@ function SimulatorColumnRight() {
           <input
             type="number"
             name="monthContribution"
-            // onChange={ ({ target }) => setInfo({ ...info, cep: target.value }) }
+            onChange={({ target }) => setMonthContribution(target.value)}
             // placeholder="R$0,00"
           />
         </label>
@@ -44,7 +52,7 @@ function SimulatorColumnRight() {
           <input
             type="number"
             name="profitability"
-            // onChange={ ({ target }) => setInfo({ ...info, cep: target.value }) }
+            onChange={({ target }) => setProfitability(target.value)}
             // placeholder="R$0,00"
           />
         </label>
@@ -55,7 +63,7 @@ function SimulatorColumnRight() {
           <input
             type="number"
             name="CDI"
-            // onChange={ ({ target }) => setInfo({ ...info, cep: target.value }) }
+            onChange={({ target }) => setCDI(target.value)}
             // placeholder="R$0,00"
           />
         </label>

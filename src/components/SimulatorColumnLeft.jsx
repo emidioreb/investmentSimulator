@@ -1,20 +1,27 @@
 import React from 'react';
+import UseInfoLeft from '../hooks/UseInfoLeft';
 
 function SimulatorColumnLeft() {
+  const { setIncome } = UseInfoLeft();
+  const { setInicialContribution } = UseInfoLeft();
+  const { setTimer } = UseInfoLeft();
+  const { setIPCA } = UseInfoLeft();
   return (
     <div>
-      <div className="return">
+      <div className="income">
         <h4>rendimentos</h4>
-        <div className="buttons-return">
+        <div className="buttons-income">
           <button
             type="button"
             className="button-gross"
+            onClick={() => setIncome('gross')}
           >
             Bruto
           </button>
           <button
             type="button"
             className="button-equity"
+            onClick={() => setIncome('equity')}
           >
             Líquido
           </button>
@@ -27,18 +34,18 @@ function SimulatorColumnLeft() {
           <input
             type="number"
             name="inicialContribution"
-            // onChange={ ({ target }) => setInfo({ ...info, cep: target.value }) }
+            onChange={({ target }) => setInicialContribution(target.value)}
             // placeholder="R$0,00"
           />
         </label>
         <br />
-        <label htmlFor="time" className="timer">
+        <label htmlFor="timer" className="timer">
           Prazo(em meses)
           <br />
           <input
             type="number"
             name="timer"
-            // onChange={ ({ target }) => setInfo({ ...info, cep: target.value }) }
+            onChange={({ target }) => setTimer(target.value)}
             // placeholder="R$0,00"
           />
         </label>
@@ -49,7 +56,7 @@ function SimulatorColumnLeft() {
           <input
             type="number"
             name="IPCA"
-            // onChange={ ({ target }) => setInfo({ ...info, cep: target.value }) }
+            onChange={({ target }) => setIPCA(target.value)}
             // placeholder="R$0,00"
           />
         </label>
