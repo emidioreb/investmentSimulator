@@ -1,6 +1,7 @@
 import React from 'react';
 import UseApi from '../hooks/UseApi';
 import UseInfoRight from '../hooks/UseInfoRight';
+// import UseApiSimulation from '../hooks/UseApiSimulation';
 
 function SimulatorColumnRight() {
   const { setIndexing } = UseInfoRight();
@@ -8,6 +9,7 @@ function SimulatorColumnRight() {
   const { setProfitability } = UseInfoRight();
   const { indicators } = UseApi();
   const { CDI, setCDI } = UseInfoRight();
+  // const { simulations, setTeste } = UseApiSimulation();
 
   // Atualizando os valores de cdi quem vem da API.
   // Coloquei uma condicional para quando for undefined o código não quebrar
@@ -23,21 +25,21 @@ function SimulatorColumnRight() {
           <button
             type="button"
             className="button-before"
-            onClick={() => setIndexing('before')}
+            onClick={() => setIndexing('pre')}
           >
             PRÉ
           </button>
           <button
             type="button"
             className="button-after"
-            onClick={() => setIndexing('after')}
+            onClick={() => setIndexing('pos')}
           >
             PÓS
           </button>
           <button
             type="button"
             className="button-fix"
-            onClick={() => setIndexing('fix')}
+            onClick={() => setIndexing('ipca')}
           >
             FIXADO
           </button>
@@ -81,6 +83,7 @@ function SimulatorColumnRight() {
       <button
         type="button"
         className="button-simulate"
+        // onClick={() => setTeste(simulations)}
       >
         Simular
       </button>

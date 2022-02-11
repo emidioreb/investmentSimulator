@@ -1,8 +1,26 @@
 import React from 'react';
 import '../css/investmentSimulator.css';
+import UseInfoLeft from '../hooks/UseInfoLeft';
+import UseInfoRight from '../hooks/UseInfoRight';
+import UseApiSimulation from '../hooks/UseApiSimulation';
 
 function InvestmentSimulator() {
-  // o que vem da API vai aonde esta os valores
+  const { simulations } = UseApiSimulation();
+  const { indexing } = UseInfoRight();
+  const { income } = UseInfoLeft();
+
+  let verify = '';
+  let objVerify = '';
+  if (simulations.length !== 0) {
+    const verifyIncome = simulations.filter((item) => (item.tipoRendimento === income));
+    const verifyIndexing = verifyIncome.filter((item) => (item.tipoIndexacao === indexing));
+    verify = verifyIndexing;
+    if (verify.length !== 0) {
+      // eslint-disable-next-line prefer-destructuring
+      objVerify = verify[0];
+    }
+  }
+
   return (
     <div>
       <h3>Simulador de Investimento</h3>
@@ -10,29 +28,29 @@ function InvestmentSimulator() {
         <div className="resultsLeft">
           <div className="finalResults">
             <h4>Valor Final Bruto</h4>
-            <p>R$15.509,27</p>
+            <p>{objVerify.valorFinalBruto}</p>
           </div>
           <div className="finalResults">
             <h4>Valor Final Líquido</h4>
-            <p>R$15.509,27</p>
+            <p>{objVerify.valorFinalLiquido}</p>
           </div>
           <div className="finalResults">
             <h4>Valor Total Investido</h4>
-            <p>R$15.509,27</p>
+            <p>{objVerify.valorTotalInvestido}</p>
           </div>
         </div>
         <div className="resultsRight">
           <div className="finalResults">
             <h4>Alíquota do IR</h4>
-            <p>R$15.509,27</p>
+            <p>{objVerify.aliquotaIR}</p>
           </div>
           <div className="finalResults">
             <h4>Valor Pago em IR</h4>
-            <p>R$15.509,27</p>
+            <p>{objVerify.valorPagoIR}</p>
           </div>
           <div className="finalResults">
             <h4>Ganho Líquido</h4>
-            <p>R$15.509,27</p>
+            <p>{objVerify.ganhoLiquido}</p>
           </div>
         </div>
       </div>

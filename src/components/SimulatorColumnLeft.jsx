@@ -1,6 +1,8 @@
 import React from 'react';
 import UseApi from '../hooks/UseApi';
+// import UseApiSimulation from '../hooks/UseApiSimulation';
 import UseInfoLeft from '../hooks/UseInfoLeft';
+// import UseInfoRight from '../hooks/UseInfoRight';
 
 function SimulatorColumnLeft() {
   const { setIncome } = UseInfoLeft();
@@ -8,12 +10,20 @@ function SimulatorColumnLeft() {
   const { setTimer } = UseInfoLeft();
   const { IPCA, setIPCA } = UseInfoLeft();
   const { indicators } = UseApi();
+  // const { simulations } = UseApiSimulation();
+  // const { indexing } = UseInfoRight();
 
   // Atualizando os valores de IPCA quem vem da API.
   // Coloquei uma condicional para quando for undefined o código não quebrar
   if (indicators.length !== 0) {
     setIPCA(indicators[1].valor);
   }
+
+  // if (simulations.length !== 0) {
+  //   const verifyIncome = simulations.filter((item) => (item.tipoRendimento === income));
+  //   const verifyIndexing = verifyIncome.filter((item) => (item.tipoIndexacao === indexing));
+  //   console.log(verifyIndexing);
+  // }
 
   return (
     <div>
@@ -23,14 +33,14 @@ function SimulatorColumnLeft() {
           <button
             type="button"
             className="button-gross"
-            onClick={() => setIncome('gross')}
+            onClick={() => setIncome('bruto')}
           >
             Bruto
           </button>
           <button
             type="button"
             className="button-equity"
-            onClick={() => setIncome('equity')}
+            onClick={() => setIncome('liquido')}
           >
             Líquido
           </button>
