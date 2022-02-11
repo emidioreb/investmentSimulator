@@ -1,11 +1,20 @@
 import React from 'react';
+import UseApi from '../hooks/UseApi';
 import UseInfoLeft from '../hooks/UseInfoLeft';
 
 function SimulatorColumnLeft() {
   const { setIncome } = UseInfoLeft();
   const { setInicialContribution } = UseInfoLeft();
   const { setTimer } = UseInfoLeft();
-  const { setIPCA } = UseInfoLeft();
+  const { IPCA, setIPCA } = UseInfoLeft();
+  const { indicators } = UseApi();
+
+  // Atualizando os valores de IPCA quem vem da API.
+  // Coloquei uma condicional para quando for undefined o código não quebrar
+  if (indicators.length !== 0) {
+    setIPCA(indicators[1].valor);
+  }
+
   return (
     <div>
       <div className="income">
@@ -56,8 +65,7 @@ function SimulatorColumnLeft() {
           <input
             type="number"
             name="IPCA"
-            onChange={({ target }) => setIPCA(target.value)}
-            // placeholder="R$0,00"
+            value={IPCA}
           />
         </label>
       </div>

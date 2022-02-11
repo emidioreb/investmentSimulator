@@ -1,11 +1,20 @@
 import React from 'react';
+import UseApi from '../hooks/UseApi';
 import UseInfoRight from '../hooks/UseInfoRight';
 
 function SimulatorColumnRight() {
   const { setIndexing } = UseInfoRight();
   const { setMonthContribution } = UseInfoRight();
   const { setProfitability } = UseInfoRight();
-  const { setCDI } = UseInfoRight();
+  const { indicators } = UseApi();
+  const { CDI, setCDI } = UseInfoRight();
+
+  // Atualizando os valores de cdi quem vem da API.
+  // Coloquei uma condicional para quando for undefined o código não quebrar
+  if (indicators.length !== 0) {
+    setCDI(indicators[0].valor);
+  }
+
   return (
     <div>
       <div className="indexing-Types">
@@ -63,7 +72,8 @@ function SimulatorColumnRight() {
           <input
             type="number"
             name="CDI"
-            onChange={({ target }) => setCDI(target.value)}
+            value={CDI}
+            // onChange={({ target }) => setCDI(target.value)}
             // placeholder="R$0,00"
           />
         </label>
