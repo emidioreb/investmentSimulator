@@ -14,7 +14,7 @@ function App() {
       <InfoProviderRight>
         <ApiProvider>
           <ApiSimulationProvider>
-            <div>
+            <div className="all">
               <InvestmentHeader />
               <div className="simulator-invest">
                 <Simulator />

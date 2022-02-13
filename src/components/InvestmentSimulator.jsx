@@ -22,7 +22,7 @@ function InvestmentSimulator() {
   }
 
   return (
-    <div>
+    <div className="investiment-simulator">
       <h3>Simulador de Investimento</h3>
       <div className="totalResults">
         <div className="resultsLeft">
@@ -34,16 +34,18 @@ function InvestmentSimulator() {
             <h4>Valor Final Líquido</h4>
             <p>{objVerify.valorFinalLiquido}</p>
           </div>
+        </div>
+        <div className="resultsCenter">
           <div className="finalResults">
             <h4>Valor Total Investido</h4>
             <p>{objVerify.valorTotalInvestido}</p>
           </div>
-        </div>
-        <div className="resultsRight">
           <div className="finalResults">
             <h4>Alíquota do IR</h4>
             <p>{objVerify.aliquotaIR}</p>
           </div>
+        </div>
+        <div className="resultsRight">
           <div className="finalResults">
             <h4>Valor Pago em IR</h4>
             <p>{objVerify.valorPagoIR}</p>

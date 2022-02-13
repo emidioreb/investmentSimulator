@@ -20,7 +20,7 @@ function SimulatorColumnRight() {
   return (
     <div>
       <div className="indexing-Types">
-        <h4>Tipos de Indexação</h4>
+        <h4 className="sub-title">Tipos de Indexação</h4>
         <div className="buttons-Indexing-Types">
           <button
             type="button"
@@ -46,7 +46,7 @@ function SimulatorColumnRight() {
         </div>
       </div>
       <div className="inputs-simulator">
-        <label htmlFor="monthContribution" className="monthContribution">
+        <label htmlFor="monthContribution" className="monthContribution sub-title">
           Aporte Mensal
           <br />
           <input
@@ -57,7 +57,7 @@ function SimulatorColumnRight() {
           />
         </label>
         <br />
-        <label htmlFor="profitability" className="profitability">
+        <label htmlFor="profitability" className="profitability sub-title">
           Rentabilidade
           <br />
           <input
@@ -68,8 +68,8 @@ function SimulatorColumnRight() {
           />
         </label>
         <br />
-        <label htmlFor="CDI" className="CDI">
-          CDI
+        <label htmlFor="CDI" className="CDI sub-title">
+          CDI(ao ano)
           <br />
           <input
             type="number"

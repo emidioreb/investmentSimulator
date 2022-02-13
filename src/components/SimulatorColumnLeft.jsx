@@ -26,9 +26,9 @@ function SimulatorColumnLeft() {
   // }
 
   return (
-    <div>
+    <div className="simulatorColumnLeft">
       <div className="income">
-        <h4>rendimentos</h4>
+        <h4 className="sub-title">Rendimento</h4>
         <div className="buttons-income">
           <button
             type="button"
@@ -47,7 +47,7 @@ function SimulatorColumnLeft() {
         </div>
       </div>
       <div className="inputs-simulator">
-        <label htmlFor="inicialContribution" className="inicialContribution">
+        <label htmlFor="inicialContribution" className="inicialContribution sub-title">
           Aporte Inicial
           <br />
           <input
@@ -58,7 +58,7 @@ function SimulatorColumnLeft() {
           />
         </label>
         <br />
-        <label htmlFor="timer" className="timer">
+        <label htmlFor="timer" className="timer sub-title">
           Prazo(em meses)
           <br />
           <input
@@ -69,8 +69,8 @@ function SimulatorColumnLeft() {
           />
         </label>
         <br />
-        <label htmlFor="IPCA" className="IPCA">
-          IPCA
+        <label htmlFor="IPCA" className="IPCA sub-title">
+          IPCA(ao ano)
           <br />
           <input
             type="number"
