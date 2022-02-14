@@ -8,6 +8,9 @@ export function InfoProviderRight({ children }) {
   const [monthContribution, setMonthContribution] = useState('');
   const [profitability, setProfitability] = useState('');
   const [CDI, setCDI] = useState('');
+  const [changeColorBefore, setChangeColorBefore] = useState(false);
+  const [changeColorFix, setChangeColorFix] = useState(false);
+  const [changeColorAfter, setChangeColorAfter] = useState(false);
 
   // eslint-disable-next-line react/jsx-no-constructed-context-values
   const globalInfo = {
@@ -19,6 +22,12 @@ export function InfoProviderRight({ children }) {
     setProfitability,
     CDI,
     setCDI,
+    changeColorBefore,
+    setChangeColorBefore,
+    changeColorFix,
+    setChangeColorFix,
+    changeColorAfter,
+    setChangeColorAfter,
   };
 
   return (
