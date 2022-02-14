@@ -24,36 +24,38 @@ function InvestmentSimulator() {
 
   return (
     <div className="investiment-simulator">
-      <h3>Simulador de Investimento</h3>
+      <h3>Resultado da simulação</h3>
       <div className="totalResults">
         <div className="resultsLeft">
           <div className="finalResults">
-            <h4>Valor Final Bruto</h4>
-            <p>{teste && objVerify.valorFinalBruto}</p>
+            <h4 className="titleResults">Valor Final Bruto</h4>
+            <p className="text-result">{teste && (objVerify.length !== 0 && objVerify.valorFinalBruto.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }))}</p>
           </div>
           <div className="finalResults">
-            <h4>Valor Final Líquido</h4>
-            <p>{teste && objVerify.valorFinalLiquido}</p>
+            <h4 className="titleResults">Valor Final Líquido</h4>
+            <p className="text-result">{teste && (objVerify.length !== 0 && objVerify.valorFinalLiquido.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }))}</p>
           </div>
         </div>
         <div className="resultsCenter">
           <div className="finalResults">
-            <h4>Valor Total Investido</h4>
-            <p>{teste && objVerify.valorTotalInvestido}</p>
+            <h4 className="titleResults">Valor Total Investido</h4>
+            <p className="text-result">{teste && (objVerify.length !== 0 && objVerify.valorTotalInvestido.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }))}</p>
           </div>
           <div className="finalResults">
-            <h4>Alíquota do IR</h4>
-            <p>{teste && objVerify.aliquotaIR}</p>
+            <h4 className="titleResults">Alíquota do IR</h4>
+            <p className="text-result">
+              {teste && (objVerify.length !== 0 && `${objVerify.aliquotaIR}%`)}
+            </p>
           </div>
         </div>
         <div className="resultsRight">
           <div className="finalResults">
-            <h4>Valor Pago em IR</h4>
-            <p>{teste && objVerify.valorPagoIR}</p>
+            <h4 className="titleResults">Valor Pago em IR</h4>
+            <p className="text-result">{teste && (objVerify.length !== 0 && objVerify.valorPagoIR.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }))}</p>
           </div>
           <div className="finalResults">
-            <h4>Ganho Líquido</h4>
-            <p>{teste && objVerify.ganhoLiquido}</p>
+            <h4 className="titleResults">Ganho Líquido</h4>
+            <p className="text-result">{teste && (objVerify.length !== 0 && objVerify.ganhoLiquido.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }))}</p>
           </div>
         </div>
       </div>
