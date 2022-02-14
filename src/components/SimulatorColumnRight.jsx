@@ -1,18 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 import UseApi from '../hooks/UseApi';
 import UseInfoRight from '../hooks/UseInfoRight';
-// import UseApiSimulation from '../hooks/UseApiSimulation';
+import UseApiSimulation from '../hooks/UseApiSimulation';
 
 function SimulatorColumnRight() {
   const { setIndexing } = UseInfoRight();
-  const { setMonthContribution } = UseInfoRight();
-  const { setProfitability } = UseInfoRight();
+  const { monthContribution, setMonthContribution } = UseInfoRight();
+  const { profitability, setProfitability } = UseInfoRight();
   const { indicators } = UseApi();
   const { CDI, setCDI } = UseInfoRight();
-  const [changeColorBefore, setChangeColorBefore] = useState(false);
-  const [changeColorFix, setChangeColorFix] = useState(false);
-  const [changeColorAfter, setChangeColorAfter] = useState(false);
-  // const { simulations, setTeste } = UseApiSimulation();
+  const { changeColorBefore, setChangeColorBefore } = UseInfoRight();
+  const { changeColorFix, setChangeColorFix } = UseInfoRight();
+  const { changeColorAfter, setChangeColorAfter } = UseInfoRight();
+  const { setTeste } = UseApiSimulation();
 
   // Atualizando os valores de cdi quem vem da API.
   // Coloquei uma condicional para quando for undefined o código não quebrar
@@ -26,6 +26,7 @@ function SimulatorColumnRight() {
       setIndexing('pre');
       setChangeColorFix(false);
       setChangeColorAfter(false);
+      setTeste(false);
     } else {
       setChangeColorBefore(false);
       setIndexing('');
@@ -38,6 +39,7 @@ function SimulatorColumnRight() {
       setIndexing('ipca');
       setChangeColorBefore(false);
       setChangeColorAfter(false);
+      setTeste(false);
     } else {
       setChangeColorFix(false);
       setIndexing('');
@@ -50,6 +52,7 @@ function SimulatorColumnRight() {
       setIndexing('pos');
       setChangeColorBefore(false);
       setChangeColorFix(false);
+      setTeste(false);
     } else {
       setChangeColorAfter(false);
       setIndexing('');
@@ -91,6 +94,7 @@ function SimulatorColumnRight() {
           <input
             type="number"
             name="monthContribution"
+            value={monthContribution}
             onChange={({ target }) => setMonthContribution(target.value)}
             // placeholder="R$0,00"
           />
@@ -102,6 +106,7 @@ function SimulatorColumnRight() {
           <input
             type="number"
             name="profitability"
+            value={profitability}
             onChange={({ target }) => setProfitability(target.value)}
             // placeholder="R$0,00"
           />
@@ -122,7 +127,7 @@ function SimulatorColumnRight() {
       <button
         type="button"
         className="button-simulate"
-        // onClick={() => setTeste(simulations)}
+        onClick={() => setTeste(true)}
       >
         Simular
       </button>

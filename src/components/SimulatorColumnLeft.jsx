@@ -1,17 +1,25 @@
 import React, { useState } from 'react';
 import UseApi from '../hooks/UseApi';
-// import UseApiSimulation from '../hooks/UseApiSimulation';
+import UseApiSimulation from '../hooks/UseApiSimulation';
 import UseInfoLeft from '../hooks/UseInfoLeft';
+import UseInfoRight from '../hooks/UseInfoRight';
 // import UseInfoRight from '../hooks/UseInfoRight';
 
 function SimulatorColumnLeft() {
   const { setIncome } = UseInfoLeft();
-  const { setInicialContribution } = UseInfoLeft();
-  const { setTimer } = UseInfoLeft();
+  const { inicialContribution, setInicialContribution } = UseInfoLeft();
+  const { timer, setTimer } = UseInfoLeft();
   const { IPCA, setIPCA } = UseInfoLeft();
+  const { setMonthContribution } = UseInfoRight();
+  const {
+    setProfitability,
+    setIndexing,
+    setChangeColorBefore, setChangeColorFix, setChangeColorAfter,
+  } = UseInfoRight();
   const { indicators } = UseApi();
   const [changeColorGross, setChangeColorGross] = useState(false);
   const [changeColorEquity, setChangeColorEquity] = useState(false);
+  const { setTeste } = UseApiSimulation();
   // const { simulations } = UseApiSimulation();
   // const { indexing } = UseInfoRight();
 
@@ -32,6 +40,7 @@ function SimulatorColumnLeft() {
       setChangeColorGross(true);
       setIncome('bruto');
       setChangeColorEquity(false);
+      setTeste(false);
     } else {
       setChangeColorGross(false);
       setIncome('');
@@ -43,10 +52,25 @@ function SimulatorColumnLeft() {
       setChangeColorEquity(true);
       setIncome('liquido');
       setChangeColorGross(false);
+      setTeste(false);
     } else {
       setChangeColorEquity(false);
       setIncome('');
     }
+  }
+
+  function clearInput() {
+    setTimer('');
+    setInicialContribution('');
+    setChangeColorEquity(false);
+    setChangeColorGross(false);
+    setIncome('');
+    setMonthContribution('');
+    setProfitability('');
+    setIndexing('');
+    setChangeColorBefore(false);
+    setChangeColorFix(false);
+    setChangeColorAfter(false);
   }
 
   return (
@@ -77,6 +101,7 @@ function SimulatorColumnLeft() {
           <input
             type="number"
             name="inicialContribution"
+            value={inicialContribution}
             onChange={({ target }) => setInicialContribution(target.value)}
             // placeholder="R$0,00"
           />
@@ -88,6 +113,7 @@ function SimulatorColumnLeft() {
           <input
             type="number"
             name="timer"
+            value={timer}
             onChange={({ target }) => setTimer(target.value)}
             // placeholder="R$0,00"
           />
@@ -106,6 +132,7 @@ function SimulatorColumnLeft() {
       <button
         type="button"
         className="clear"
+        onClick={clearInput}
       >
         Limpar campos
       </button>

@@ -8,6 +8,7 @@ function InvestmentSimulator() {
   const { simulations } = UseApiSimulation();
   const { indexing } = UseInfoRight();
   const { income } = UseInfoLeft();
+  const { teste } = UseApiSimulation();
 
   let verify = '';
   let objVerify = '';
@@ -28,31 +29,31 @@ function InvestmentSimulator() {
         <div className="resultsLeft">
           <div className="finalResults">
             <h4>Valor Final Bruto</h4>
-            <p>{objVerify.valorFinalBruto}</p>
+            <p>{teste && objVerify.valorFinalBruto}</p>
           </div>
           <div className="finalResults">
             <h4>Valor Final Líquido</h4>
-            <p>{objVerify.valorFinalLiquido}</p>
+            <p>{teste && objVerify.valorFinalLiquido}</p>
           </div>
         </div>
         <div className="resultsCenter">
           <div className="finalResults">
             <h4>Valor Total Investido</h4>
-            <p>{objVerify.valorTotalInvestido}</p>
+            <p>{teste && objVerify.valorTotalInvestido}</p>
           </div>
           <div className="finalResults">
             <h4>Alíquota do IR</h4>
-            <p>{objVerify.aliquotaIR}</p>
+            <p>{teste && objVerify.aliquotaIR}</p>
           </div>
         </div>
         <div className="resultsRight">
           <div className="finalResults">
             <h4>Valor Pago em IR</h4>
-            <p>{objVerify.valorPagoIR}</p>
+            <p>{teste && objVerify.valorPagoIR}</p>
           </div>
           <div className="finalResults">
             <h4>Ganho Líquido</h4>
-            <p>{objVerify.ganhoLiquido}</p>
+            <p>{teste && objVerify.ganhoLiquido}</p>
           </div>
         </div>
       </div>

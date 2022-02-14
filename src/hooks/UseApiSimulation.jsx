@@ -8,7 +8,7 @@ const apiSimulationContext = createContext();
 export function ApiSimulationProvider({ children }) {
   const [simulations, setSimulations] = useState('');
   const [verify, setVerify] = useState('');
-  // const [teste, setTeste] = useState('');
+  const [teste, setTeste] = useState('');
   // const [simulationRender, setSimulationRender] = useState(false);
 
   const url = 'http://localhost:3000/simulacoes';
@@ -23,8 +23,8 @@ export function ApiSimulationProvider({ children }) {
     simulations,
     verify,
     setVerify,
-    // setTeste,
-    // teste,
+    setTeste,
+    teste,
     // simulationRender,
     // setSimulationRender,
   };
