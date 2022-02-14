@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import UseApi from '../hooks/UseApi';
 // import UseApiSimulation from '../hooks/UseApiSimulation';
 import UseInfoLeft from '../hooks/UseInfoLeft';
@@ -10,6 +10,8 @@ function SimulatorColumnLeft() {
   const { setTimer } = UseInfoLeft();
   const { IPCA, setIPCA } = UseInfoLeft();
   const { indicators } = UseApi();
+  const [changeColorGross, setChangeColorGross] = useState(false);
+  const [changeColorEquity, setChangeColorEquity] = useState(false);
   // const { simulations } = UseApiSimulation();
   // const { indexing } = UseInfoRight();
 
@@ -25,6 +27,28 @@ function SimulatorColumnLeft() {
   //   console.log(verifyIndexing);
   // }
 
+  function onClickButtonGross() {
+    if (changeColorGross === false) {
+      setChangeColorGross(true);
+      setIncome('bruto');
+      setChangeColorEquity(false);
+    } else {
+      setChangeColorGross(false);
+      setIncome('');
+    }
+  }
+
+  function onClickButtonEquity() {
+    if (changeColorEquity === false) {
+      setChangeColorEquity(true);
+      setIncome('liquido');
+      setChangeColorGross(false);
+    } else {
+      setChangeColorEquity(false);
+      setIncome('');
+    }
+  }
+
   return (
     <div className="simulatorColumnLeft">
       <div className="income">
@@ -32,15 +56,15 @@ function SimulatorColumnLeft() {
         <div className="buttons-income">
           <button
             type="button"
-            className="button-gross"
-            onClick={() => setIncome('bruto')}
+            className={changeColorGross ? 'button-change-color-left' : 'button-gross'}
+            onClick={onClickButtonGross}
           >
             Bruto
           </button>
           <button
             type="button"
-            className="button-equity"
-            onClick={() => setIncome('liquido')}
+            className={changeColorEquity ? 'button-change-color-right' : 'button-equity'}
+            onClick={onClickButtonEquity}
           >
             Líquido
           </button>

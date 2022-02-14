@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import UseApi from '../hooks/UseApi';
 import UseInfoRight from '../hooks/UseInfoRight';
 // import UseApiSimulation from '../hooks/UseApiSimulation';
@@ -9,6 +9,9 @@ function SimulatorColumnRight() {
   const { setProfitability } = UseInfoRight();
   const { indicators } = UseApi();
   const { CDI, setCDI } = UseInfoRight();
+  const [changeColorBefore, setChangeColorBefore] = useState(false);
+  const [changeColorFix, setChangeColorFix] = useState(false);
+  const [changeColorAfter, setChangeColorAfter] = useState(false);
   // const { simulations, setTeste } = UseApiSimulation();
 
   // Atualizando os valores de cdi quem vem da API.
@@ -17,29 +20,65 @@ function SimulatorColumnRight() {
     setCDI(indicators[0].valor);
   }
 
+  function onClickButtonBefore() {
+    if (changeColorBefore === false) {
+      setChangeColorBefore(true);
+      setIndexing('pre');
+      setChangeColorFix(false);
+      setChangeColorAfter(false);
+    } else {
+      setChangeColorBefore(false);
+      setIndexing('');
+    }
+  }
+
+  function onClickButtonFix() {
+    if (changeColorFix === false) {
+      setChangeColorFix(true);
+      setIndexing('ipca');
+      setChangeColorBefore(false);
+      setChangeColorAfter(false);
+    } else {
+      setChangeColorFix(false);
+      setIndexing('');
+    }
+  }
+
+  function onClickButtonAfter() {
+    if (changeColorAfter === false) {
+      setChangeColorAfter(true);
+      setIndexing('pos');
+      setChangeColorBefore(false);
+      setChangeColorFix(false);
+    } else {
+      setChangeColorAfter(false);
+      setIndexing('');
+    }
+  }
+
   return (
     <div>
       <div className="indexing-Types">
-        <h4 className="sub-title">Tipos de Indexação</h4>
+        <h4 className="sub-title title-indexing-Types">Indexação</h4>
         <div className="buttons-Indexing-Types">
           <button
             type="button"
-            className="button-before"
-            onClick={() => setIndexing('pre')}
+            className={changeColorBefore ? 'button-change-color-left' : 'button-before'}
+            onClick={onClickButtonBefore}
           >
             PRÉ
           </button>
           <button
             type="button"
-            className="button-after"
-            onClick={() => setIndexing('pos')}
+            className={changeColorAfter ? 'button-change-color-center' : 'button-after'}
+            onClick={onClickButtonAfter}
           >
             PÓS
           </button>
           <button
             type="button"
-            className="button-fix"
-            onClick={() => setIndexing('ipca')}
+            className={changeColorFix ? 'button-change-color-right' : 'button-fix'}
+            onClick={onClickButtonFix}
           >
             FIXADO
           </button>
