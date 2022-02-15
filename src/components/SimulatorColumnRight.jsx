@@ -12,7 +12,9 @@ function SimulatorColumnRight() {
   const { CDI, setCDI } = UseInfoRight();
   const { changeColorBefore, setChangeColorBefore } = UseInfoRight();
   const { changeColorFix, setChangeColorFix } = UseInfoRight();
-  const { changeColorAfter, setChangeColorAfter } = UseInfoRight();
+  const {
+    changeColorAfter, setChangeColorAfter, setRenderResults,
+  } = UseInfoRight();
   const { setTeste } = UseApiSimulation();
   // const [setChangeColorButtonSimulate] = useState(false);
   const { income } = UseInfoLeft();
@@ -64,9 +66,8 @@ function SimulatorColumnRight() {
 
   function buttonSimulate() {
     setTeste(true);
+    setRenderResults(true);
   }
-
-  console.log(profitability);
 
   return (
     <div>
@@ -135,7 +136,6 @@ function SimulatorColumnRight() {
         </label>
       </div>
       <button
-        variant="secondary"
         type="button"
         className={indexing !== '' && income !== '' ? 'button-simulate-change' : 'button-simulate'}
         onClick={buttonSimulate}

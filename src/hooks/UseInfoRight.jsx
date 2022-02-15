@@ -11,6 +11,7 @@ export function InfoProviderRight({ children }) {
   const [changeColorBefore, setChangeColorBefore] = useState(false);
   const [changeColorFix, setChangeColorFix] = useState(false);
   const [changeColorAfter, setChangeColorAfter] = useState(false);
+  const [renderResults, setRenderResults] = useState(false);
 
   // eslint-disable-next-line react/jsx-no-constructed-context-values
   const globalInfo = {
@@ -28,6 +29,8 @@ export function InfoProviderRight({ children }) {
     setChangeColorFix,
     changeColorAfter,
     setChangeColorAfter,
+    renderResults,
+    setRenderResults,
   };
 
   return (

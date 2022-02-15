@@ -63,7 +63,7 @@ function SimulatorColumnLeft() {
   }
   // console.log(inicialContribution);
   // const xablau = `R$ ${(+inicialContribution).toFixed(2).replace('.', ',')}`;
-  // console.log(xablau);
+  // console.log(inicialContribution.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }));
 
   return (
     <div className="simulatorColumnLeft">
@@ -91,7 +91,7 @@ function SimulatorColumnLeft() {
           Aporte Inicial
           <br />
           <input
-            type="text"
+            type="number"
             name="inicialContribution"
             value={inicialContribution}
             onChange={({ target }) => setInicialContribution(target.value)}

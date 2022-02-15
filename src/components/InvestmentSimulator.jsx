@@ -3,13 +3,15 @@ import '../css/investmentSimulator.css';
 import UseInfoLeft from '../hooks/UseInfoLeft';
 import UseInfoRight from '../hooks/UseInfoRight';
 import UseApiSimulation from '../hooks/UseApiSimulation';
+import eqiImage from '../image/eqi.png';
 
 function InvestmentSimulator() {
   const { simulations } = UseApiSimulation();
-  const { indexing } = UseInfoRight();
+  const { indexing, renderResults } = UseInfoRight();
   const { income } = UseInfoLeft();
   const { teste } = UseApiSimulation();
 
+  console.log(renderResults);
   let verify = '';
   let objVerify = '';
   if (simulations.length !== 0) {
@@ -20,6 +22,12 @@ function InvestmentSimulator() {
       // eslint-disable-next-line prefer-destructuring
       objVerify = verify[0];
     }
+  }
+
+  if (renderResults === false) {
+    return (
+      <img className="eqi-imagem" src={eqiImage} alt="logo" id="logoCenter-login" width="300px" height="300px" />
+    );
   }
 
   return (
