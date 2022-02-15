@@ -1,10 +1,11 @@
 import React from 'react';
 import UseApi from '../hooks/UseApi';
 import UseInfoRight from '../hooks/UseInfoRight';
+import UseInfoLeft from '../hooks/UseInfoLeft';
 import UseApiSimulation from '../hooks/UseApiSimulation';
 
 function SimulatorColumnRight() {
-  const { setIndexing } = UseInfoRight();
+  const { indexing, setIndexing } = UseInfoRight();
   const { monthContribution, setMonthContribution } = UseInfoRight();
   const { profitability, setProfitability } = UseInfoRight();
   const { indicators } = UseApi();
@@ -13,6 +14,8 @@ function SimulatorColumnRight() {
   const { changeColorFix, setChangeColorFix } = UseInfoRight();
   const { changeColorAfter, setChangeColorAfter } = UseInfoRight();
   const { setTeste } = UseApiSimulation();
+  // const [setChangeColorButtonSimulate] = useState(false);
+  const { income } = UseInfoLeft();
 
   // Atualizando os valores de cdi quem vem da API.
   // Coloquei uma condicional para quando for undefined o código não quebrar
@@ -59,6 +62,10 @@ function SimulatorColumnRight() {
     }
   }
 
+  function buttonSimulate() {
+    setTeste(true);
+  }
+
   return (
     <div>
       <div className="indexing-Types">
@@ -66,7 +73,7 @@ function SimulatorColumnRight() {
         <div className="buttons-Indexing-Types">
           <button
             type="button"
-            className={changeColorBefore ? 'button-change-color-left' : 'button-before'}
+            className={changeColorBefore ? 'button-change-color-left-indexing' : 'button-before'}
             onClick={onClickButtonBefore}
           >
             PRÉ
@@ -80,7 +87,7 @@ function SimulatorColumnRight() {
           </button>
           <button
             type="button"
-            className={changeColorFix ? 'button-change-color-right' : 'button-fix'}
+            className={changeColorFix ? 'button-change-color-right-indexing' : 'button-fix'}
             onClick={onClickButtonFix}
           >
             FIXADO
@@ -126,8 +133,8 @@ function SimulatorColumnRight() {
       </div>
       <button
         type="button"
-        className="button-simulate"
-        onClick={() => setTeste(true)}
+        className={indexing !== '' && income !== '' ? 'button-simulate-change' : 'button-simulate'}
+        onClick={buttonSimulate}
       >
         Simular
       </button>
@@ -136,3 +143,5 @@ function SimulatorColumnRight() {
 }
 
 export default SimulatorColumnRight;
+
+// .button-simulate-change
