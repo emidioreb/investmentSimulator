@@ -63,7 +63,7 @@ function SimulatorColumnLeft() {
   }
   // console.log(inicialContribution);
   // const xablau = `R$ ${(+inicialContribution).toFixed(2).replace('.', ',')}`;
-  // console.log(xablau);
+  // console.log(inicialContribution.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }));
 
   return (
     <div className="simulatorColumnLeft">

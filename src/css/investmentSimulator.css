@@ -34,3 +34,16 @@
     font-size: 14px;
     line-height: 17px;
 }
+
+.eqi-imagem{
+  padding-top: 90px;  
+  transform: scale(1.3);
+  -webkit-transform: scale(1.3);
+  -webkit-transition: all 0.7s ease;
+  transition: all 0.7s ease;
+}
+
+.eqi-imagem:hover {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
