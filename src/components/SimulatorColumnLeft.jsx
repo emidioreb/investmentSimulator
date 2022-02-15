@@ -91,7 +91,7 @@ function SimulatorColumnLeft() {
           Aporte Inicial
           <br />
           <input
-            type="text"
+            type="number"
             name="inicialContribution"
             value={inicialContribution}
             onChange={({ target }) => setInicialContribution(target.value)}
