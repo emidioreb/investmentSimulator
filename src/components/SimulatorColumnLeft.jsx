@@ -61,6 +61,9 @@ function SimulatorColumnLeft() {
     setChangeColorFix(false);
     setChangeColorAfter(false);
   }
+  // console.log(inicialContribution);
+  // const xablau = `R$ ${(+inicialContribution).toFixed(2).replace('.', ',')}`;
+  // console.log(xablau);
 
   return (
     <div className="simulatorColumnLeft">
@@ -88,11 +91,11 @@ function SimulatorColumnLeft() {
           Aporte Inicial
           <br />
           <input
-            type="number"
+            type="text"
             name="inicialContribution"
             value={inicialContribution}
             onChange={({ target }) => setInicialContribution(target.value)}
-            // placeholder="R$0,00"
+            placeholder="Ex.:R$0,00"
           />
         </label>
         <br />
@@ -104,7 +107,7 @@ function SimulatorColumnLeft() {
             name="timer"
             value={timer}
             onChange={({ target }) => setTimer(target.value)}
-            // placeholder="R$0,00"
+            placeholder="Ex.: 12"
           />
         </label>
         <br />

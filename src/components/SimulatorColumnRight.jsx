@@ -66,6 +66,8 @@ function SimulatorColumnRight() {
     setTeste(true);
   }
 
+  console.log(profitability);
+
   return (
     <div>
       <div className="indexing-Types">
@@ -103,7 +105,7 @@ function SimulatorColumnRight() {
             name="monthContribution"
             value={monthContribution}
             onChange={({ target }) => setMonthContribution(target.value)}
-            // placeholder="R$0,00"
+            placeholder="Ex.:R$0,00"
           />
         </label>
         <br />
@@ -111,11 +113,12 @@ function SimulatorColumnRight() {
           Rentabilidade
           <br />
           <input
-            type="number"
+            type="text"
             name="profitability"
+            // value={profitability !== '' ? `${profitability}%` : profitability}
             value={profitability}
             onChange={({ target }) => setProfitability(target.value)}
-            // placeholder="R$0,00"
+            placeholder="Ex.:12%"
           />
         </label>
         <br />
@@ -132,6 +135,7 @@ function SimulatorColumnRight() {
         </label>
       </div>
       <button
+        variant="secondary"
         type="button"
         className={indexing !== '' && income !== '' ? 'button-simulate-change' : 'button-simulate'}
         onClick={buttonSimulate}
