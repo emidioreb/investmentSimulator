@@ -44,6 +44,25 @@ input{
 }
 
 .button-simulate{
+    background: #AFAEAE;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    position: absolute;
+    width: 222px;
+    height: 50px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px; 
+    color: #000000; 
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.button-simulate-change{
     background: #E64519;
     border: 1px solid #000000;
     box-sizing: border-box;
@@ -57,10 +76,11 @@ input{
     font-weight: bold;
     font-size: 14px;
     line-height: 17px; 
-    color: #FFFFFF; 
+    color: #F5F5F5; 
     transition: all 0.5s;
     cursor: pointer;
 }
+
 
 .clear{
     background-color: #E4E4E4;
@@ -208,12 +228,47 @@ input{
     cursor: pointer;
 }
 
+.button-change-color-right-indexing{
+    background-color: #E64519;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 1px 10px 10px 1px;
+    width: 74px;
+    height: 50px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 17px; 
+    color: #F5F5F5; 
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.button-change-color-left-indexing{
+    background-color: #E64519;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px 1px 1px 10px;
+    width: 74px;
+    height: 50px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 17px; 
+    color: #F5F5F5; 
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+
 .button-change-color-center{
     background-color: #E64519;
     border: 1px solid #000000;
     box-sizing: border-box;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    width: 111px;
+    width: 74px;
     height: 50px;
     font-family: Montserrat;
     font-style: normal;
