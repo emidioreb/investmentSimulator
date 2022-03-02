@@ -39,7 +39,8 @@ Primeiramente eu desenvolvi a aplicação no figma, que é uma software de proto
 - Desenvolvimento Front-end: JavaScript, React, css e Hooks.
 
 ## Demonstração da aplicação.
-![ezgif com-gif-maker](https://user-images.githubusercontent.com/83843425/154605830-8c28da94-3539-4615-af1b-35752dabdbba.gif)
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/83843425/156385440-5823c548-e219-428c-b2a1-cf83aaf80602.gif)
+
 
 ## Como acessar o projeto?
 1. Para API funcionar
