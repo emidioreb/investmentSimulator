@@ -3,7 +3,7 @@ import '../css/investmentSimulator.css';
 import UseInfoLeft from '../hooks/UseInfoLeft';
 import UseInfoRight from '../hooks/UseInfoRight';
 import UseApiSimulation from '../hooks/UseApiSimulation';
-import eqiImage from '../image/eqi.png';
+import money from '../image/money.png';
 
 function InvestmentSimulator() {
   const { simulations } = UseApiSimulation();
@@ -26,7 +26,7 @@ function InvestmentSimulator() {
 
   if (renderResults === false) {
     return (
-      <img className="eqi-imagem" src={eqiImage} alt="logo" id="logoCenter-login" width="300px" height="300px" />
+      <img className="eqi-imagem" src={money} alt="logo" id="logoCenter-login" width="300px" height="300px" />
     );
   }
 
